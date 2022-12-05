@@ -7,7 +7,8 @@
 Module.register("MMM-Ecowatt", {
   defaults: {
     debug: false,
-    credentials: null
+    credentials: null,
+    zoom: 50
   },
 
   start: function () {
@@ -28,6 +29,7 @@ Module.register("MMM-Ecowatt", {
   getDom: function() {
     var wrapper = document.createElement("div")
     wrapper.id = "MMM-Ecowatt"
+    wrapper.style.zoom = this.config.zoom+"%"
 
     var days = document.createElement("div")
     days.id = "MMM-Ecowatt-days_container"
