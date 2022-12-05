@@ -50,6 +50,12 @@ Module.register("MMM-Ecowatt", {
         img2.id = "MMM-Ecowatt-img2"
         day2.appendChild(img2)
       days.appendChild(day2)
+      var day3 = document.createElement("div")
+      day3.id= "MMM-Ecowatt-day3"
+        var img3 = document.createElement("div")
+        img3.id = "MMM-Ecowatt-img3"
+        day3.appendChild(img3)
+      days.appendChild(day3)
 
     var message = document.createElement("div")
     message.id = "MMM-Ecowatt-message"

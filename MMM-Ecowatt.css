@@ -5,40 +5,46 @@
 
 #MMM-Ecowatt-day0,
 #MMM-Ecowatt-day1,
-#MMM-Ecowatt-day2 {
+#MMM-Ecowatt-day2,
+#MMM-Ecowatt-day3 {
   margin: 0 5px;
 }
 
 #MMM-Ecowatt-day0 .background,
 #MMM-Ecowatt-day1 .background,
-#MMM-Ecowatt-day2 .background {
-  color: #fff;
-  font-weight: bolder;
-  background-size: 100%;
-  width: 150px;
-  height: 105px;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  text-align: center;
+#MMM-Ecowatt-day2 .background,
+#MMM-Ecowatt-day3 .background {
+    color: #fff;
+    font-size: medium;
+    font-weight: bolder;
+    background-size: 100%;
+    width: 95px;
+    height: 65px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    text-align: center;
 }
 
 #MMM-Ecowatt-day0 .green,
 #MMM-Ecowatt-day1 .green,
-#MMM-Ecowatt-day2 .green {
+#MMM-Ecowatt-day2 .green,
+#MMM-Ecowatt-day3 .green {
     background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-green.png);
 }
 
 #MMM-Ecowatt-day0 .orange,
 #MMM-Ecowatt-day1 .orange,
-#MMM-Ecowatt-day2 .orange {
+#MMM-Ecowatt-day2 .orange,
+#MMM-Ecowatt-day3 .orange {
     background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-orange.png);
 }
 
 #MMM-Ecowatt-day0 .red,
 #MMM-Ecowatt-day1 .red,
-#MMM-Ecowatt-day2 .red {
+#MMM-Ecowatt-day2 .red,
+#MMM-Ecowatt-day3 .red {
     background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-red.png);
 }
 
@@ -49,18 +55,18 @@
 #MMM-Ecowatt-values {
   display:flex;
   padding: 10px;
-    font-size: small;
-    color: #000;
-    text-align: center;
+  font-size: small;
+  color: #000;
+  text-align: center;
 }
 
 #MMM-Ecowatt-signal0 {
   border-top-left-radius: 60px;
   border-bottom-left-radius: 60px;
   height: 15px;
-  white-space: 1px;
   border: 1px outset black;
   flex: auto;
+  padding: 1px 0;
 }
 
 #MMM-Ecowatt-signal1,
@@ -87,18 +93,18 @@
 #MMM-Ecowatt-signal22,
 #MMM-Ecowatt-signal23 {
   height: 15px;
-  white-space: 1px;
   border: 1px outset black;
   flex: auto;
+  padding: 1px 0;
 }
 
 #MMM-Ecowatt-signal24 {
   border-top-right-radius: 60px;
   border-bottom-right-radius: 60px;
   height: 15px;
-  white-space: 1px;
   border: 1px outset black;
   flex: auto;
+  padding: 1px 0;
 }
 
 #MMM-Ecowatt-signal0.green,
