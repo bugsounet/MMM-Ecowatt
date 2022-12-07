@@ -83,7 +83,6 @@ Module.register("MMM-Ecowatt", {
   socketNotificationReceived: function(noti, payload) {
     switch(noti) {
       case "DATA":
-        console.log("DATA:", payload)
         this.signals = payload
         if (payload.error) this.displayError(payload)
         else this.updateValues()
