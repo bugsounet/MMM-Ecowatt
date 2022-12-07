@@ -8,7 +8,7 @@ Module.register("MMM-Ecowatt", {
   defaults: {
     debug: false,
     credentials: null,
-    zoom: 50
+    zoom: 100
   },
 
   start: function () {
@@ -73,13 +73,16 @@ Module.register("MMM-Ecowatt", {
       values.appendChild(signalTable)
     }
     wrapper.appendChild(values)
+
+    var lastUpdate = document.createElement("div")
+    lastUpdate.id = "MMM-Ecowatt-update"
+    wrapper.appendChild(lastUpdate)
     return wrapper
   },
 
   socketNotificationReceived: function(noti, payload) {
     switch(noti) {
       case "DATA":
-        console.log("DATA:", payload)
         this.signals = payload
         if (payload.error) this.displayError(payload)
         else this.updateValues()
@@ -107,24 +110,24 @@ Module.register("MMM-Ecowatt", {
   updateValues: function() {
     this.signals.signals.forEach((signal,nb) => {
       var img = document.getElementById("MMM-Ecowatt-img"+nb)
-      if (img) {
-        var date = document.getElementById("MMM-Ecowatt-date"+nb)
-        img.className = "background " + this.color[signal.dvalue]
-        img.innerHTML = moment(signal.jour).format("dddd").toUpperCase() + "<br />" + moment(signal.jour).format("Do MMM")
-        if (nb == 0) {
-          var message = document.getElementById("MMM-Ecowatt-message")
-          message.textContent = signal.message
-          signal.values.forEach(value => {
-            var signalTable = document.getElementById("MMM-Ecowatt-signal"+value.pas)
+      var date = document.getElementById("MMM-Ecowatt-date"+nb)
+      img.className = "background " + this.color[signal.dvalue]
+      img.innerHTML = moment(signal.jour).format("dddd").toUpperCase() + "<br />" + moment(signal.jour).format("Do MMM")
+      if (nb == 0) { // get data from the first day
+        var message = document.getElementById("MMM-Ecowatt-message")
+        var lastUpdate = document.getElementById("MMM-Ecowatt-update")
+        lastUpdate.textContent = "Données du " + moment(signal.GenerationFichier).format("dddd Do MMMM HH:MM")
+        message.textContent = signal.message
+        signal.values.forEach(value => {
+          var signalTable = document.getElementById("MMM-Ecowatt-signal"+value.pas)
+          signalTable.className = this.color[value.hvalue]
+          signalTable.textContent = (value.pas % 6 == 0) ? value.pas + "h" : ""
+          if (value.pas == 23) {
+            signalTable = document.getElementById("MMM-Ecowatt-signal24")
             signalTable.className = this.color[value.hvalue]
-            signalTable.textContent = (value.pas % 6 == 0) ? value.pas + "h" : ""
-            if (value.pas == 23) {
-              signalTable = document.getElementById("MMM-Ecowatt-signal24")
-              signalTable.className = this.color[value.hvalue]
-              signalTable.textContent = "24h"
-            }
-          })
-        }
+            signalTable.textContent = "24h"
+          }
+        })
       }
     })
   }

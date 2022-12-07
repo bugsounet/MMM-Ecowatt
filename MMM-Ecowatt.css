@@ -5,9 +5,14 @@
 
 #MMM-Ecowatt-day0,
 #MMM-Ecowatt-day1,
-#MMM-Ecowatt-day2,
+#MMM-Ecowatt-day2 {
+  margin: 0 5px;
+  flex: auto;
+}
+
 #MMM-Ecowatt-day3 {
   margin: 0 5px;
+  flex: none;
 }
 
 #MMM-Ecowatt-day0 .background,
@@ -189,4 +194,11 @@
 #MMM-Ecowatt-signal23.red,
 #MMM-Ecowatt-signal24.red {
   background-color: #e63946;
+}
+
+#MMM-Ecowatt-update {
+  font-size: small;
+  text-align: end;
+  font-style: italic;
+  color: dimgrey;
 }

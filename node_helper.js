@@ -16,7 +16,7 @@ module.exports = NodeHelper.create({
   start: function() {
     this.init = false
     this.token = null
-    this.data = null
+    this.data = {}
     this.timer = null
   },
 
@@ -33,22 +33,46 @@ module.exports = NodeHelper.create({
       return console.error("[ECOWATT] No credentials found!")
     }
     this.authorizationSeed = 'Basic ' + this.config.credentials
+    await this.initFromCache()
+    if (this.data.cache) this.sendSocketNotification("DATA", this.data)
     await this.initFromToken()
     if (this.token.error) return
     if (this.token) {
-      this.data = await this.getData()
-      this.sendSocketNotification("DATA", this.data)
-      this.timer = setInterval(async () => {
-        log("Updating...")
+      if (!this.data.cache) {
         this.data = await this.getData()
         this.sendSocketNotification("DATA", this.data)
-        log("Update Done.")
-      }, 1000 * 60 * 60)
+        this.autoUpdateData()
+      } else {
+        this.delayedUpdate()
+      }
     }
     else {
-      console.error("[ECOWATT] No token!")
+      console.error("[ECOWATT] No token!") // must never happen !
       this.sendSocketNotification("ERROR", { error: "", text: "Pas de Token !?"})
     }
+  },
+
+  delayedUpdate: function() {
+    log("Delayed update Pending...")
+    clearTimeout(this.timer)
+    this.timer= setTimeout(async () => {
+      log("GetData updating... (delayed)")
+      this.data = await this.getData()
+      this.sendSocketNotification("DATA", this.data)
+      log("GetData Update (delayed) Done.")
+      this.autoUpdateData()
+    }, 1000 * 60 * 5)
+  },
+
+  autoUpdateData: function() {
+    log("AutoUpdate Pending...")
+    clearInterval(this.timer)
+    this.timer = setInterval(async () => {
+      log("Updating...")
+      this.data = await this.getData()
+      this.sendSocketNotification("DATA", this.data)
+      log("Update Done.")
+    }, 1000 * 60 * 60)
   },
 
   socketNotificationReceived: function(noti, payload) {
@@ -79,6 +103,23 @@ module.exports = NodeHelper.create({
         resolve({ error: response.status, text: response.statusText})
       }
     })
+  },
+
+  initFromCache: async function() {
+    var cache = path.resolve(__dirname, "dataCache.json")
+    if (fs.existsSync(cache)) {
+      this.data = JSON.parse(fs.readFileSync(cache))
+      log("Data From File", this.data)
+    } else {
+      log("No cache found")
+    }
+  },
+
+  writeCache: function(data) {
+    var file = path.resolve(__dirname, "dataCache.json")
+    data.cache = true
+    fs.writeFileSync(file, JSON.stringify(data))
+    log("Cache is written...")
   },
 
   initFromToken: async function() {
@@ -124,6 +165,7 @@ module.exports = NodeHelper.create({
 
       if (response.ok) {
         const result = await response.json()
+        this.writeCache(result)
         resolve(result)
       } else {
         console.error("[ECOWATT] Error:", response.status, response.statusText)
