@@ -1,0 +1,204 @@
+#MMM-Ecowatt-days_container {
+    display:flex;
+    padding: 10px;
+}
+
+#MMM-Ecowatt-day0,
+#MMM-Ecowatt-day1,
+#MMM-Ecowatt-day2 {
+  margin: 0 5px;
+  flex: auto;
+}
+
+#MMM-Ecowatt-day3 {
+  margin: 0 5px;
+  flex: none;
+}
+
+#MMM-Ecowatt-day0 .background,
+#MMM-Ecowatt-day1 .background,
+#MMM-Ecowatt-day2 .background,
+#MMM-Ecowatt-day3 .background {
+    color: #fff;
+    font-size: medium;
+    font-weight: bolder;
+    background-size: 100%;
+    width: 95px;
+    height: 65px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    text-align: center;
+}
+
+#MMM-Ecowatt-day0 .green,
+#MMM-Ecowatt-day1 .green,
+#MMM-Ecowatt-day2 .green,
+#MMM-Ecowatt-day3 .green {
+    background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-green.png);
+}
+
+#MMM-Ecowatt-day0 .orange,
+#MMM-Ecowatt-day1 .orange,
+#MMM-Ecowatt-day2 .orange,
+#MMM-Ecowatt-day3 .orange {
+    background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-orange.png);
+}
+
+#MMM-Ecowatt-day0 .red,
+#MMM-Ecowatt-day1 .red,
+#MMM-Ecowatt-day2 .red,
+#MMM-Ecowatt-day3 .red {
+    background-image: url(/modules/MMM-Ecowatt/resources/courbe-signal-red.png);
+}
+
+#MMM-Ecowatt-message {
+  text-align: center;
+}
+
+#MMM-Ecowatt-values {
+  display:flex;
+  padding: 10px;
+  font-size: small;
+  color: #000;
+  text-align: center;
+}
+
+#MMM-Ecowatt-signal0 {
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  height: 15px;
+  border: 1px outset black;
+  flex: auto;
+  padding: 1px 0;
+}
+
+#MMM-Ecowatt-signal1,
+#MMM-Ecowatt-signal2,
+#MMM-Ecowatt-signal3,
+#MMM-Ecowatt-signal4,
+#MMM-Ecowatt-signal5,
+#MMM-Ecowatt-signal6,
+#MMM-Ecowatt-signal7,
+#MMM-Ecowatt-signal8,
+#MMM-Ecowatt-signal9,
+#MMM-Ecowatt-signal10,
+#MMM-Ecowatt-signal11,
+#MMM-Ecowatt-signal12,
+#MMM-Ecowatt-signal13,
+#MMM-Ecowatt-signal14,
+#MMM-Ecowatt-signal15,
+#MMM-Ecowatt-signal16,
+#MMM-Ecowatt-signal17,
+#MMM-Ecowatt-signal18,
+#MMM-Ecowatt-signal19,
+#MMM-Ecowatt-signal20,
+#MMM-Ecowatt-signal21,
+#MMM-Ecowatt-signal22,
+#MMM-Ecowatt-signal23 {
+  height: 15px;
+  border: 1px outset black;
+  flex: auto;
+  padding: 1px 0;
+}
+
+#MMM-Ecowatt-signal24 {
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  height: 15px;
+  border: 1px outset black;
+  flex: auto;
+  padding: 1px 0;
+}
+
+#MMM-Ecowatt-signal0.green,
+#MMM-Ecowatt-signal1.green,
+#MMM-Ecowatt-signal2.green,
+#MMM-Ecowatt-signal3.green,
+#MMM-Ecowatt-signal4.green,
+#MMM-Ecowatt-signal5.green,
+#MMM-Ecowatt-signal6.green,
+#MMM-Ecowatt-signal7.green,
+#MMM-Ecowatt-signal8.green,
+#MMM-Ecowatt-signal9.green,
+#MMM-Ecowatt-signal10.green,
+#MMM-Ecowatt-signal11.green,
+#MMM-Ecowatt-signal12.green,
+#MMM-Ecowatt-signal13.green,
+#MMM-Ecowatt-signal14.green,
+#MMM-Ecowatt-signal15.green,
+#MMM-Ecowatt-signal16.green,
+#MMM-Ecowatt-signal17.green,
+#MMM-Ecowatt-signal18.green,
+#MMM-Ecowatt-signal19.green,
+#MMM-Ecowatt-signal20.green,
+#MMM-Ecowatt-signal21.green,
+#MMM-Ecowatt-signal22.green,
+#MMM-Ecowatt-signal23.green,
+#MMM-Ecowatt-signal24.green {
+  background-color: #02f0c6;
+}
+
+#MMM-Ecowatt-signal0.orange,
+#MMM-Ecowatt-signal1.orange,
+#MMM-Ecowatt-signal2.orange,
+#MMM-Ecowatt-signal3.orange,
+#MMM-Ecowatt-signal4.orange,
+#MMM-Ecowatt-signal5.orange,
+#MMM-Ecowatt-signal6.orange,
+#MMM-Ecowatt-signal7.orange,
+#MMM-Ecowatt-signal8.orange,
+#MMM-Ecowatt-signal9.orange,
+#MMM-Ecowatt-signal10.orange,
+#MMM-Ecowatt-signal11.orange,
+#MMM-Ecowatt-signal12.orange,
+#MMM-Ecowatt-signal13.orange,
+#MMM-Ecowatt-signal14.orange,
+#MMM-Ecowatt-signal15.orange,
+#MMM-Ecowatt-signal16.orange,
+#MMM-Ecowatt-signal17.orange,
+#MMM-Ecowatt-signal18.orange,
+#MMM-Ecowatt-signal19.orange,
+#MMM-Ecowatt-signal20.orange,
+#MMM-Ecowatt-signal21.orange,
+#MMM-Ecowatt-signal22.orange,
+#MMM-Ecowatt-signal23.orange,
+#MMM-Ecowatt-signal24.orange {
+  background-color: #f2790f;
+}
+
+#MMM-Ecowatt-signal0.red,
+#MMM-Ecowatt-signal1.red,
+#MMM-Ecowatt-signal2.red,
+#MMM-Ecowatt-signal3.red,
+#MMM-Ecowatt-signal4.red,
+#MMM-Ecowatt-signal5.red,
+#MMM-Ecowatt-signal6.red,
+#MMM-Ecowatt-signal7.red,
+#MMM-Ecowatt-signal8.red,
+#MMM-Ecowatt-signal9.red,
+#MMM-Ecowatt-signal10.red,
+#MMM-Ecowatt-signal11.red,
+#MMM-Ecowatt-signal12.red,
+#MMM-Ecowatt-signal13.red,
+#MMM-Ecowatt-signal14.red,
+#MMM-Ecowatt-signal15.red,
+#MMM-Ecowatt-signal16.red,
+#MMM-Ecowatt-signal17.red,
+#MMM-Ecowatt-signal18.red,
+#MMM-Ecowatt-signal19.red,
+#MMM-Ecowatt-signal20.red,
+#MMM-Ecowatt-signal21.red,
+#MMM-Ecowatt-signal22.red,
+#MMM-Ecowatt-signal23.red,
+#MMM-Ecowatt-signal24.red {
+  background-color: #e63946;
+}
+
+#MMM-Ecowatt-update {
+  font-size: small;
+  text-align: end;
+  font-style: italic;
+  color: dimgrey;
+}

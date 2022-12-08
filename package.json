@@ -1,0 +1,27 @@
+{
+  "name": "MMM-Ecowatt",
+  "version": "1.0.0",
+  "rev": "221208",
+  "description": "Ecowatt, votre météo de l’électricité pour une consommation responsable",
+  "main": "MMM-Ecowatt.js",
+  "scripts": {
+    "preinstall": "installer/preinstall.sh",
+    "postinstall": "installer/postinstall.sh",
+    "update": "installer/update.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugsounet/MMM-Ecowatt"
+  },
+  "authors": [
+    "bugsounet"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://forum.bugsounet.fr"
+  },
+  "homepage": "https://wiki.bugsounet.fr",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
+}
