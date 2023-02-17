@@ -1,7 +1,7 @@
 {
   "name": "MMM-Ecowatt",
-  "version": "1.0.0",
-  "rev": "221207",
+  "version": "0.0.0+EOL",
+  "rev": "230217",
   "description": "Ecowatt, votre météo de l’électricité pour une consommation responsable",
   "main": "MMM-Ecowatt.js",
   "scripts": {
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://forum.bugsounet.fr"
   },
-  "homepage": "https://wiki.bugsounet.fr",
-  "dependencies": {
-    "node-fetch": "^3.3.0"
-  }
+  "homepage": "https://wiki.bugsounet.fr"
 }
